@@ -43,7 +43,7 @@ before_filter :find_bid, only: [:show, :edit, :update, :destroy]
 
 private
   def find_legal_request
-    @legal_request = Legal_request.find(params[:legal_request_id])
+    @legal_request = LegalRequest.find(params[:legal_request_id])
   end
 
   def find_bid

@@ -12,7 +12,7 @@ require 'spec_helper'
       click_button 'Create Auction'
       page.should have_content('Auction has been initiated.')
 
-      legal_request = Legal_request.find_by_name("DUI")
+      legal_request = LegalRequest.find_by_name("DUI")
       page.current_url.should == legal_request_url(legal_request)
       title = "DUI = Legal_Requests - Lawyer_Auction"
       find("title").should have_content(title)

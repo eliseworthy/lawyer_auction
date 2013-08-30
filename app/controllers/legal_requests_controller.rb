@@ -3,15 +3,15 @@ class LegalRequestsController < ApplicationController
 before_filter :find_legal_request, only: [:show, :edit, :update, :destroy]
 
   def index
-    @legal_requests = Legal_request.all
+    @legal_requests = LegalRequest.all
   end
 
   def new
-    @legal_request = Legal_request.new
+    @legal_request = LegalRequest.new
   end
 
   def create
-    @legal_request = Legal_request.new(params[:legal_request])
+    @legal_request = LegalRequest.new(params[:legal_request])
     if @legal_request.save
       flash[:notice] = "Legal request auction has been initiated."
       redirect_to @legal_request
@@ -45,7 +45,7 @@ before_filter :find_legal_request, only: [:show, :edit, :update, :destroy]
 
 private
   def find_legal_request
-    @legal_request = Legal_request.find(params[:id])
+    @legal_request = LegalRequest.find(params[:id])
     rescue ActiveRecord::RecordNotFound
     flash[:alert] = "The legal request you were looking for" +
                     " could not be found."
