@@ -6,6 +6,7 @@ feature "Editing Auctions" do
     visit '/'
     #click_link 'Current Legal Requests'
     click_link "Edit Legal Request"
+  end
 
   scenario "Updating an legal request" do
     fill_in "Legal Issue", with: "DUI"
